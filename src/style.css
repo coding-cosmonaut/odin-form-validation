@@ -1,0 +1,60 @@
+body,
+form,
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+/*FORM*/
+form {
+  width: 50%;
+  height: 50%;
+  flex-direction: column;
+  gap: 20px;
+  background-color: aliceblue;
+}
+
+label,
+input {
+  font-size: 1.5rem;
+}
+
+input {
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+label {
+  width: 100%;
+  text-align: left;
+}
+
+.input-container {
+  flex-direction: column;
+}
+
+.error {
+  font-size: 1rem;
+  text-align: left;
+  color: red;
+  width: 100%;
+}
+
+.error-invalid {
+  border: 3px solid red;
+}
+
+.error-valid {
+  border: 3px solid lightgreen;
+}
+
+input:focus {
+  outline: none;
+}
