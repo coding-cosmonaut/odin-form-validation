@@ -1,4 +1,4 @@
 import "./style.css";
-import checkEmail from "./email-validation";
+import validation from "./validation";
 
-checkEmail();
+window.addEventListener("load", validation);

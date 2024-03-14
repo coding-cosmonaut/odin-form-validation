@@ -6,9 +6,6 @@ const validateEmail = function validateTypeAndLengthOfEmailAddress() {
     email.classList.add("error-invalid");
     email.classList.remove("error-valid");
     errorSpan.textContent = "Please provide a valid email address";
-    // if (email.validity.typeMismatch && email.value.length < 6) {
-    //   errorSpan.textContent += "Email does not have enough characters";
-    // }
   } else if (email.value.length < 6) {
     email.classList.add("error-invalid");
     email.classList.remove("error-valid");
@@ -23,7 +20,10 @@ const validateEmail = function validateTypeAndLengthOfEmailAddress() {
   }
 };
 
-const checkEmail = function checkForEmailInputInDocument() {
+const checkEmail = function checkForEmailInputInDocument(e) {
+  // if (e === "submit") {
+  //   validateEmail();
+  // }
   if (email) {
     email.addEventListener("input", validateEmail);
   } else {
