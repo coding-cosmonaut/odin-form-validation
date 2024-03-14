@@ -9,8 +9,8 @@ const zipValidation = function zipPostalCodeValidation(
   country = selectedCountry.value
 ) {
   const constraint = constraints[country][0];
+  if (zip.value.length === 0) return;
   if (country === "us") {
-    if (zip.value.length === 0) return;
     zip.setAttribute("placeholder", "EX: 90210 or 99577-0727");
     if (!constraint.test(zip.value)) {
       // eslint-disable-next-line prefer-destructuring

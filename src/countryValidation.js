@@ -1,7 +1,6 @@
 import zipValidation from "./zipValidation";
 
 const select = document.querySelector("#country");
-const errorSpan = select.parentNode.querySelector(".error");
 
 const countryCheck = function generalValidityCheck() {
   zipValidation(event, select.value);

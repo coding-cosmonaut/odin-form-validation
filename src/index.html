@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="svg"></div>
     <form novalidate action="">
       <div class="input-container">
         <label for="email">Email*</label>
@@ -19,7 +26,7 @@
         <span class="error"></span>
       </div>
       <div class="input-container">
-        <label for="country">Country*</label>
+        <label for="country">Country</label>
 
         <select required name="country" id="country">
           <option selected value="us">United States</option>
@@ -27,7 +34,6 @@
           <option value="de">Germany</option>
           <option value="rs">Russia</option>
         </select>
-        <span class="error"></span>
       </div>
       <div class="input-container">
         <label for="zip">Zip/Postal Code*</label>

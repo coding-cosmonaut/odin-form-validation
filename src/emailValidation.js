@@ -21,9 +21,6 @@ const validateEmail = function validateTypeAndLengthOfEmailAddress() {
 };
 
 const checkEmail = function checkForEmailInputInDocument(e) {
-  // if (e === "submit") {
-  //   validateEmail();
-  // }
   if (email) {
     email.addEventListener("input", validateEmail);
   } else {

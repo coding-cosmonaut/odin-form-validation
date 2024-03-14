@@ -1,3 +1,9 @@
+:root {
+  --main-font: "Noto Serif Display", serif;
+  --error-red: #ff3131;
+  --success-green: #7CFC00;
+}
+
 body,
 form,
 .input-container {
@@ -6,24 +12,51 @@ form,
   align-items: center;
 }
 
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
 body {
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
 }
 
+.svg {
+  content: url(./handOkay.svg);
+  height: 100%;
+  width: 80%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-150%);
+}
+
+.success-svg {
+  transform: translateX(0%);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
 /*FORM*/
 form {
-  width: 50%;
-  height: 50%;
+  width: 900px;
   flex-direction: column;
   gap: 20px;
-  background-color: aliceblue;
+  padding: 100px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.176);
 }
 
 label,
 input {
-  font-size: 1.5rem;
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  font-family: "Noto Serif Display", serif;
 }
 
 input {
@@ -33,13 +66,24 @@ input {
 }
 
 label {
-  width: 100%;
   text-align: left;
 }
 
 .input-container {
-  flex-direction: column;
-  width: 80%;
+  justify-content: space-between;
+  width: 90%;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+select {
+  width: 55%;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 12px;
+  background-color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
 }
 
 .error {
@@ -47,16 +91,31 @@ label {
   text-align: left;
   color: red;
   width: 100%;
+  position: absolute;
+  bottom: -20%;
+  right: -45%;
 }
 
 .error-invalid {
-  border: 3px solid red;
+  border: 3px solid var(--error-red);
 }
 
 .error-valid {
-  border: 3px solid lightgreen;
+  border: 3px solid var(--success-green);
 }
 
 input:focus {
   outline: none;
+}
+
+button[type="submit"] {
+  padding: 15px 80px;
+  text-transform: uppercase;
+  font-family: var(--main-font);
+  font-weight: bold;
+  letter-spacing: 0.4rem;
+  background-color: white;
+  font-size: 2rem;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 12px;
 }
