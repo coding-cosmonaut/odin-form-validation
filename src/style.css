@@ -1,7 +1,7 @@
 :root {
   --main-font: "Noto Serif Display", serif;
   --error-red: #ff3131;
-  --success-green: #7CFC00;
+  --success-green: #7cfc00;
 }
 
 body,
@@ -78,7 +78,7 @@ label {
 
 select {
   width: 55%;
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 1rem;
   border-radius: 12px;
   background-color: white;
@@ -106,6 +106,20 @@ select {
 
 input:focus {
   outline: none;
+}
+
+button[type="button"] {
+  background-image: url(./eyeOutline.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 1%;
+  top: 45%;
+  transform: translateY(-45%);
 }
 
 button[type="submit"] {
