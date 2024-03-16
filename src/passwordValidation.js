@@ -20,6 +20,7 @@ const passwordCheck = function passwordValidationCheck() {
     password.classList.add("error-valid");
     isValid = true;
   }
+  // eslint-disable-next-line consistent-return
   return isValid;
 };
 
