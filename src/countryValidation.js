@@ -2,14 +2,10 @@ import zipValidation from "./zipValidation";
 
 const select = document.querySelector("#country");
 
-const countryCheck = function generalValidityCheck() {
+const selectListener = function listeningForChangeOnSelectInputToRunZipValidation() {
   zipValidation(event, select.value);
 };
 
-const checkCountry = function checkForSelectElement() {
-  if (select) {
-    select.addEventListener("change", countryCheck);
-  }
-};
+select.addEventListener("change", selectListener);
 
-export default checkCountry;
+export { selectListener, select };

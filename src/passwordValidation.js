@@ -1,6 +1,8 @@
 const password = document.querySelector("#password");
 const errorSpan = password.parentNode.querySelector(".error");
 
+let isValid = false;
+
 const passwordCheck = function passwordValidationCheck() {
   const testingRegex =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
@@ -11,11 +13,14 @@ const passwordCheck = function passwordValidationCheck() {
     errorSpan.style.bottom = "-60%";
     password.classList.add("error-invalid");
     password.classList.remove("error-valid");
+    isValid = false;
   } else {
     errorSpan.textContent = "";
     password.classList.remove("error-invalid");
     password.classList.add("error-valid");
+    isValid = true;
   }
+  return isValid;
 };
 
 password.addEventListener("input", passwordCheck);

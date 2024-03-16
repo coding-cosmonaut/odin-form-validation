@@ -1,5 +1,5 @@
-import checkEmail from "./emailValidation";
-import checkCountry from "./countryValidation";
+import validateEmail from "./emailValidation";
+import { selectListener } from "./countryValidation";
 import checkValue from "./valueValidation";
 import zipValidation from "./zipValidation";
 import { passwordCheck } from "./passwordValidation";
@@ -12,14 +12,18 @@ const svg = document.querySelector(".svg");
 const validation = function addSubmitEventToForm(e) {
   if (e.type === "submit") {
     e.preventDefault();
-    if (!form.checkValidity()) {
-      checkValue();
-    } else {
+    if (
+      checkValue() &&
+      validateEmail() &&
+      zipValidation() &&
+      passwordCheck() &&
+      confirm()
+    ) {
       svg.classList.add("success-svg");
     }
   } else {
-    checkEmail();
-    checkCountry();
+    validateEmail();
+    selectListener();
     zipValidation();
     passwordCheck();
     confirm();
